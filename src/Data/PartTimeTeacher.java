@@ -5,26 +5,26 @@ public class PartTimeTeacher extends Teacher{
     private float salary;
 
     private PartTimeTeacher(){
-        hours = 0;
-        salary = 0;
+        this.hours = 0;
+        this.salary = 0;
     }
 
     private PartTimeTeacher(String nameTeacher, int idTeacher, int hoursExperience){
         super.setIdTeacher(idTeacher);
         super.setNameTeacher(nameTeacher);
-        hours = hoursExperience;
-        salary = calculateSalary();
+        this.hours = hoursExperience;
+        this.salary = calculateSalary();
     }
 
     public float calculateSalary(){
-        return salary_basic * (hours * 5);
+        return salary_basic * (this.hours * 5);
     }
 
     public int getHoursExperience(){
-        return hours;
+        return this.hours;
     }
 
     public void setHoursExperience(int yearsTeacher){
-        hours = yearsTeacher;
+        this.hours = yearsTeacher;
     }
 }

@@ -5,15 +5,15 @@ public class FullTimeTeacher extends Teacher{
     private float salary;
 
     private FullTimeTeacher(){
-        years = 0;
-        salary = 0;
+        this.years = 0;
+        this.salary = 0;
     }
 
     private FullTimeTeacher(String nameTeacher, int idTeacher, int yearsExperience){
         super.setIdTeacher(idTeacher);
         super.setNameTeacher(nameTeacher);
-        years = yearsExperience;
-        salary = calculateSalary();
+        this.years = yearsExperience;
+        this.salary = calculateSalary();
     }
 
     public float calculateSalary(){
@@ -21,10 +21,10 @@ public class FullTimeTeacher extends Teacher{
     }
 
     public int getYearsExperience(){
-        return years;
+        return this.years;
     }
 
     public void setYearsExperience(int yearsTeacher){
-        years = yearsTeacher;
+        this.years = yearsTeacher;
     }
 }

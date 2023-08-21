@@ -6,24 +6,24 @@ public abstract class Teacher {
     protected int id;
 
     public Teacher(){
-        name = "";
-        id = 0;
+        this.name = "";
+        this.id = 0;
     }
 
     public String getNameTeacher(){
-        return name;
+        return this.name;
     }
 
     public int getIdTeacher(){
-        return id;
+        return this.id;
     }
 
     public void setNameTeacher(String newNameTeacher){
-        name = newNameTeacher;
+        this.name = newNameTeacher;
     }
 
     public void setIdTeacher(int newIdTeacher){
-        id = newIdTeacher;
+        this.id = newIdTeacher;
     }
 
     public abstract float calculateSalary();
