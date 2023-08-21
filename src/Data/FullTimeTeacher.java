@@ -4,12 +4,12 @@ public class FullTimeTeacher extends Teacher{
     private int years;
     private float salary;
 
-    private FullTimeTeacher(){
+    public FullTimeTeacher(){
         this.years = 0;
         this.salary = 0;
     }
 
-    private FullTimeTeacher(String nameTeacher, int idTeacher, int yearsExperience){
+    public FullTimeTeacher(String nameTeacher, int idTeacher, int yearsExperience){
         super.setIdTeacher(idTeacher);
         super.setNameTeacher(nameTeacher);
         this.years = yearsExperience;
