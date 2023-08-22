@@ -17,7 +17,7 @@ public class Student {
         this.name = nameStudent;
     }
 
-    public int getIDStudent(){
+    public int getIdStudent(){
         return this.id;
     }
 
