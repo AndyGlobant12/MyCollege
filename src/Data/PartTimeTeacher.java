@@ -16,8 +16,9 @@ public class PartTimeTeacher extends Teacher{
         this.salary = calculateSalary();
     }
 
+    //Se debe multiplicar por 4 (cantidad de semanas) y 5 (dias laborales). Por lo tanto, n horas x 20
     public float calculateSalary(){
-        return salary_basic * (this.hours * 5);
+        return salary_basic * (this.hours * 20);
     }
 
     public int getHoursExperience(){

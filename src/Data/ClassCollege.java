@@ -3,13 +3,13 @@ package Data;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class {
+public class ClassCollege {
     private String name, classroom;
     private FullTimeTeacher ftTeacher;
     private PartTimeTeacher ptTeacher;
     private List<Student> studentsAssigned;
 
-    public Class(){
+    public ClassCollege(){
         this.name = "";
         this.classroom = "";
         this.ftTeacher = new FullTimeTeacher();
@@ -17,7 +17,7 @@ public class Class {
         this.studentsAssigned = new ArrayList<Student>();
     }
 
-    public Class(String nameClass, String classroomAssigned){
+    public ClassCollege(String nameClass, String classroomAssigned){
         this.name = nameClass;
         this.classroom = classroomAssigned;
     }
@@ -27,11 +27,11 @@ public class Class {
     public void setNameClass(String newNameClass){ this.name = newNameClass; }
     public void setClassroomClass(String newClassroom){ this.classroom = newClassroom; }
     public void setStudentsAssigned(List<Student> newStudents){ this.studentsAssigned = newStudents; }
-    public void setFullTimeTeacher(String nameTeacher, int idTeacher, int yearsExperience){
-        this.ftTeacher = new FullTimeTeacher(nameTeacher, idTeacher, yearsExperience);
+    public void setFullTimeTeacher(FullTimeTeacher newFTTeacher){
+        this.ftTeacher =  newFTTeacher;
     }
-    public void setPartTimeTeacher(String nameTeacher, int idTeacher, int hoursExperience){
-        this.ptTeacher = new PartTimeTeacher(nameTeacher, idTeacher, hoursExperience);
+    public void setPartTimeTeacher(PartTimeTeacher newPTTeacher){
+        this.ptTeacher = newPTTeacher;
     }
 
 }
