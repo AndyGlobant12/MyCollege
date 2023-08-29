@@ -20,9 +20,9 @@ public class ClassCollege {
     public ClassCollege(String nameClass, String classroomAssigned){
         this.name = nameClass;
         this.classroom = classroomAssigned;
-
-
-        this.studentsAssigned = new ArrayList<Student>();
+        this.ftTeacher = null;
+        this.ptTeacher = null;
+        this.studentsAssigned = null;
     }
 
     public String getNameClass(){ return this.name; }
@@ -33,13 +33,6 @@ public class ClassCollege {
     public void setNameClass(String newNameClass){ this.name = newNameClass; }
     public void setClassroomClass(String newClassroom){ this.classroom = newClassroom; }
     public void setStudentsAssigned(List<Student> newStudents){ this.studentsAssigned = newStudents; }
-    public void setFullTimeTeacher(FullTimeTeacher newFTTeacher){
-        this.ftTeacher = new FullTimeTeacher();
-        this.ftTeacher =  newFTTeacher;
-    }
-    public void setPartTimeTeacher(PartTimeTeacher newPTTeacher){
-        this.ptTeacher = new PartTimeTeacher();
-        this.ptTeacher = newPTTeacher;
-    }
-
+    public void setFullTimeTeacher(FullTimeTeacher newFTTeacher){ this.ftTeacher =  newFTTeacher; }
+    public void setPartTimeTeacher(PartTimeTeacher newPTTeacher){ this.ptTeacher = newPTTeacher; }
 }
