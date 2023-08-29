@@ -51,17 +51,18 @@ public class MyCollege {
         for(int i = 0; i < this.ftTeacherCollege.size(); i++){
             System.out.println(this.ftTeacherCollege.get(i).getNameTeacher() +"|\t Full time");
         }
-
         for(int j = 0; j < this.ptTeacherCollege.size(); j++){
             System.out.println(this.ptTeacherCollege.get(j).getNameTeacher() +"|\t Part time");
         }
+        System.out.print("\n");
     }
 
     public void listClasses(){
         System.out.println("Nombre de la clase" + "|\t" + "Aula");
         for(int i = 0; i < this.classesCollege.size(); i++){
-            System.out.println(i + " " + this.classesCollege.get(i).getNameClass() +"|\t" + this.classesCollege.get(i).getClassroomClass());
+            System.out.println(i + ". " + this.classesCollege.get(i).getNameClass() +"|\t" + this.classesCollege.get(i).getClassroomClass());
         }
+        System.out.print("\n");
     }
 
     public void classDetails(String nameClass){
@@ -79,6 +80,7 @@ public class MyCollege {
                 for (int j = 0; j < classSelected.getStudents().size(); j++) {
                     System.out.println("* " + classSelected.getStudents().get(j).getNameStudent());
                 }
+                System.out.print("\n");
             }
         }
     }
@@ -89,9 +91,10 @@ public class MyCollege {
                 Student newStudent = new Student(newStudentId, newStudentAge, newStudentName);
                 ClassCollege classSelected = this.classesCollege.get(i);
                 classSelected.getStudents().add(newStudent);
+                break;
             }
             else {
-                System.out.println("La clase no existe, por favor intentelo nuevamente");
+                if(i==this.classesCollege.size()) { System.out.println("La clase no existe, por favor intentelo nuevamente\n");}
             }
         }
     }
@@ -114,7 +117,7 @@ public class MyCollege {
                         newClass.setFullTimeTeacher(this.ftTeacherCollege.get(i));
                         break;
                     } else {
-                        System.out.println("El docente no existe en el sistema");
+                        System.out.println("El docente no existe en el sistema\n");
                     }
                 }
             } else {
@@ -123,12 +126,13 @@ public class MyCollege {
                         newClass.setPartTimeTeacher(this.ptTeacherCollege.get(i));
                         break;
                     } else {
-                        System.out.println("El docente no existe en el sistema");
+                        System.out.println("El docente no existe en el sistema \n");
                     }
                 }
             }
             newClass.setStudentsAssigned(newClassStudnets);
             this.classesCollege.add(newClass);
+            System.out.print("\n");
         }
         else{
             System.out.println("No es posible crear la clase");

@@ -29,7 +29,7 @@ public class Main {
 
             int option = 0, newStudentId = 0, newStudentAge = 0, teacherId = 0, studentSearched = 0;
             boolean addStudent = true, fullTimeTeacher = true;
-            String nameClass = "", newStudentName = "", newClassRoom = "";
+            String nameClass = "", newStudentName = "", newClassRoom = "", optionStudent = "", optionTeacher = "";
             List<Student> studentsEnrolled = university.getStudentsCollege();
             List<Student> studentsToNewClass = new ArrayList<Student>();
             option = scan.nextInt();
@@ -74,7 +74,9 @@ public class Main {
                     scan = new Scanner(System.in);
 
                     System.out.println("Es un profesor full time? Y / N");
-                    if(scan.nextLine() == "Y"){ fullTimeTeacher = true; }
+                    optionTeacher = scan.nextLine();
+                    scan = new Scanner(System.in);
+                    if(optionTeacher.equals("Y")){ fullTimeTeacher = true; }
                     else {fullTimeTeacher = false;}
 
                     System.out.println("Luego, introduzca el id del profesor");
@@ -90,14 +92,15 @@ public class Main {
                             if(studentsEnrolled.get(i).getIdStudent()==newStudentId){
                                 studentsToNewClass.add(studentsEnrolled.get(i));
                                 System.out.println("Desea adicionar un estudiante? Y / N");
-                                if(scan.nextLine() == "N"){
+                                optionStudent = scan.nextLine();
+                                scan = new Scanner(System.in);
+                                if(optionStudent.equals("N")){
                                     addStudent = false;
                                     break;
                                 }
                             }
                         }
                     }
-
                     university.addNewClass(nameClass, newClassRoom, teacherId, studentsToNewClass, fullTimeTeacher);
                     break;
 
@@ -105,15 +108,17 @@ public class Main {
                     System.out.println("Introduzca el id del estudiante");
                     studentSearched = scan.nextInt();
                     scan = new Scanner(System.in);
-
                     university.classListByStudent(studentSearched);
+                    break;
 
                 case 6:
                     finishTransaction = true;
+                    break;
 
                 default:
                     System.out.println("Opción no disponible. Favor volver a intentar");
                     finishTransaction = false;
+                    break;
             }
         }
     }
